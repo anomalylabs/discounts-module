@@ -2,6 +2,14 @@
 
 use Anomaly\Streams\Platform\Addon\Module\Module;
 
+/**
+ * Class DiscountsModule
+ *
+ * @link          http://pyrocms.com/
+ * @author        PyroCMS, Inc. <support@pyrocms.com>
+ * @author        Ryan Thompson <ryan@pyrocms.com>
+ * @package       Anomaly\DiscountsModule
+ */
 class DiscountsModule extends Module
 {
 
@@ -18,7 +26,11 @@ class DiscountsModule extends Module
      * @var array
      */
     protected $sections = [
-        'example'
+        'discounts' => [
+            'buttons' => [
+                'new_discount'
+            ]
+        ]
     ];
 
 }

@@ -2,6 +2,13 @@
 
 use Anomaly\Streams\Platform\Database\Migration\Migration;
 
+/**
+ * Class AnomalyModuleDiscountsCreateDiscountsStream
+ *
+ * @link          http://pyrocms.com/
+ * @author        PyroCMS, Inc. <support@pyrocms.com>
+ * @author        Ryan Thompson <ryan@pyrocms.com>
+ */
 class AnomalyModuleDiscountsCreateDiscountsStream extends Migration
 {
 
@@ -11,7 +18,9 @@ class AnomalyModuleDiscountsCreateDiscountsStream extends Migration
      * @var array
      */
     protected $stream = [
-        'slug' => 'discounts'
+        'slug'         => 'discounts',
+        'title_column' => 'code',
+        'trashable'    => true,
     ];
 
     /**
@@ -19,6 +28,24 @@ class AnomalyModuleDiscountsCreateDiscountsStream extends Migration
      *
      * @var array
      */
-    protected $assignments = [];
+    protected $assignments = [
+        'code'         => [
+            'required' => true,
+            'unique'   => true,
+        ],
+        'enabled',
+        'availability' => [
+            'required' => true,
+        ],
+        'limit',
+        'limit_per_customer',
+        'type'         => [
+            'required' => true,
+        ],
+        'amount'       => [
+            'required' => true,
+        ],
+        'used',
+    ];
 
 }

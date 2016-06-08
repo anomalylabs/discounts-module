@@ -2,29 +2,42 @@
 
 use Anomaly\Streams\Platform\Ui\Table\TableBuilder;
 
+/**
+ * Class DiscountTableBuilder
+ *
+ * @link          http://pyrocms.com/
+ * @author        PyroCMS, Inc. <support@pyrocms.com>
+ * @author        Ryan Thompson <ryan@pyrocms.com>
+ * @package       Anomaly\DiscountsModule\Discount\Table
+ */
 class DiscountTableBuilder extends TableBuilder
 {
-
-    /**
-     * The table views.
-     *
-     * @var array|string
-     */
-    protected $views = [];
 
     /**
      * The table filters.
      *
      * @var array|string
      */
-    protected $filters = [];
+    protected $filters = [
+        'search' => [
+            'fields' => [
+                'code',
+            ]
+        ],
+        'type'
+    ];
 
     /**
      * The table columns.
      *
      * @var array|string
      */
-    protected $columns = [];
+    protected $columns = [
+        'code' => [
+            'wrapper' => '<pre>{value}</pre>'
+        ],
+        'entry.enabled.label',
+    ];
 
     /**
      * The table buttons.

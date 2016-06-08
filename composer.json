@@ -1,0 +1,9 @@
+{
+    "name": "anomaly/discounts-module",
+    "type": "streams-addon",
+    "autoload": {
+        "psr-4": {
+            "Anomaly\\DiscountsModule\\": "src/"
+        }
+    }
+}

@@ -2,6 +2,7 @@
 
 return [
     'admin/discounts'           => 'Anomaly\DiscountsModule\Http\Controller\Admin\DiscountsController@index',
+    'admin/discounts/choose'    => 'Anomaly\DiscountsModule\Http\Controller\Admin\DiscountsController@choose',
     'admin/discounts/create'    => 'Anomaly\DiscountsModule\Http\Controller\Admin\DiscountsController@create',
     'admin/discounts/edit/{id}' => 'Anomaly\DiscountsModule\Http\Controller\Admin\DiscountsController@edit'
 ];

@@ -38,18 +38,19 @@ class AnomalyModuleDiscountsCreateDiscountsFields extends Migration
         ],
         'limit'              => 'anomaly.field_type.integer',
         'limit_per_customer' => 'anomaly.field_type.integer',
-        'used'               => 'anomaly.field_type.integer',
-        'type'               => [
-            'type'   => 'anomaly.field_type.select',
+        'used'               => [
+            'type'   => 'anomaly.field_type.integer',
             'config' => [
-                'options' => [
-                    'fixed_amount' => 'anomaly.module.discounts::field.type.option.fixed_amount',
-                    'percentage'   => 'anomaly.module.discounts::field.type.option.percentage',
-                    'shipping'     => 'anomaly.module.discounts::field.type.option.shipping',
-                ]
+                'default_value' => 0
             ]
         ],
-        'amount'             => 'anomaly.field_type.decimal',
+        'extension'          => [
+            'type'   => 'anomaly.field_type.addon',
+            'config' => [
+                'type'   => 'extension',
+                'search' => 'anomaly.module.discounts::discount.*',
+            ]
+        ],
     ];
 
 }

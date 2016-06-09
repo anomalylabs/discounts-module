@@ -28,20 +28,7 @@ return [
         'warning'      => 'Usage is tracked by the customer\'s email address.',
         //'placeholder'  => '∞'
     ],
-    'type'               => [
-        'name'         => 'Type',
-        'label'        => 'Discount Type',
-        'instructions' => 'What type of discount is this?',
-        'option'       => [
-            'fixed_amount' => '$ USD',
-            'percentage'   => '% Discount',
-            'shipping'     => 'Free Shipping',
-        ]
-    ],
-    'amount'             => [
-        'name'         => 'Amount',
-        'label'        => 'Discount Amount',
-        'instructions' => 'Specify the discount amount according to the <strong>Discount Type</strong>.',
-        'warning'      => 'The amount is ignored for <strong>Free Shipping</strong> discounts.'
+    'extension'          => [
+        'name' => 'Type',
     ],
 ];

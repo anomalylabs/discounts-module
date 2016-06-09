@@ -24,7 +24,7 @@ class DiscountTableBuilder extends TableBuilder
                 'code',
             ]
         ],
-        'type'
+        'extension'
     ];
 
     /**

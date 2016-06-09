@@ -39,13 +39,12 @@ class AnomalyModuleDiscountsCreateDiscountsStream extends Migration
         ],
         'limit',
         'limit_per_customer',
-        'type'         => [
+        'used' => [
             'required' => true,
         ],
-        'amount'       => [
+        'extension'       => [
             'required' => true,
         ],
-        'used',
     ];
 
 }

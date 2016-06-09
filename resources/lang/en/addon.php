@@ -3,5 +3,5 @@
 return [
     'title'       => 'Discounts',
     'name'        => 'Discounts Module',
-    'description' => ''
+    'description' => 'Manage discounts, coupons, and sales for your store.'
 ];

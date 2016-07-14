@@ -20,6 +20,7 @@ class AnomalyModuleDiscountsCreateDiscountsStream extends Migration
     protected $stream = [
         'slug'         => 'discounts',
         'title_column' => 'code',
+        'translatable' => true,
         'trashable'    => true,
     ];
 
@@ -29,20 +30,31 @@ class AnomalyModuleDiscountsCreateDiscountsStream extends Migration
      * @var array
      */
     protected $assignments = [
-        'code'         => [
+        'name'         => [
+            'required'     => true,
+            'translatable' => true,
+        ],
+        'slug'         => [
             'required' => true,
             'unique'   => true,
         ],
+        'description'  => [
+            'translatable' => true,
+        ],
+        'code'         => [
+            'unique' => true,
+        ],
+        'allowed_customer_groups',
         'enabled',
         'availability' => [
             'required' => true,
         ],
-        'limit',
+        'limit_per_coupon',
         'limit_per_customer',
-        'used' => [
+        'used'         => [
             'required' => true,
         ],
-        'extension'       => [
+        'extension'    => [
             'required' => true,
         ],
     ];

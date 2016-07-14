@@ -1,29 +1,27 @@
 <?php namespace Anomaly\DiscountsModule\Http\Controller\Admin;
 
-use Anomaly\DiscountsModule\Discount\Contract\DiscountExtensionInterface;
-use Anomaly\DiscountsModule\Discount\Form\DiscountFormBuilder;
-use Anomaly\DiscountsModule\Discount\Form\DiscountMultipleFormBuilder;
-use Anomaly\DiscountsModule\Discount\Table\DiscountTableBuilder;
+use Anomaly\DiscountsModule\Filter\Form\FilterFormBuilder;
+use Anomaly\DiscountsModule\Filter\Table\FilterTableBuilder;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
 
 /**
- * Class DiscountsController
+ * Class FiltersController
  *
  * @link          http://pyrocms.com/
  * @author        PyroCMS, Inc. <support@pyrocms.com>
  * @author        Ryan Thompson <ryan@pyrocms.com>
  * @package       Anomaly\DiscountsModule\Http\Controller\Admin
  */
-class DiscountsController extends AdminController
+class FiltersController extends AdminController
 {
 
     /**
      * Display an index of existing entries.
      *
-     * @param DiscountTableBuilder $table
+     * @param FilterTableBuilder $table
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function index(DiscountTableBuilder $table)
+    public function index(FilterTableBuilder $table)
     {
         return $table->render();
     }
@@ -31,10 +29,10 @@ class DiscountsController extends AdminController
     /**
      * Create a new entry.
      *
-     * @param DiscountFormBuilder $form
+     * @param FilterFormBuilder $form
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function create(DiscountFormBuilder $form)
+    public function create(FilterFormBuilder $form)
     {
         return $form->render();
     }
@@ -42,11 +40,11 @@ class DiscountsController extends AdminController
     /**
      * Edit an existing entry.
      *
-     * @param DiscountFormBuilder $form
-     * @param                     $id
+     * @param FilterFormBuilder $form
+     * @param                   $id
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function edit(DiscountFormBuilder $form, $id)
+    public function edit(FilterFormBuilder $form, $id)
     {
         return $form->render($id);
     }

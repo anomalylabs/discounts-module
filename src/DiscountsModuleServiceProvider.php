@@ -2,35 +2,23 @@
 
 use Anomaly\Streams\Platform\Addon\AddonServiceProvider;
 
+/**
+ * Class DiscountsModuleServiceProvider
+ *
+ * @link          http://pyrocms.com/
+ * @author        PyroCMS, Inc. <support@pyrocms.com>
+ * @author        Ryan Thompson <ryan@pyrocms.com>
+ * @package       Anomaly\DiscountsModule
+ */
 class DiscountsModuleServiceProvider extends AddonServiceProvider
 {
 
-    protected $plugins = [];
-
-    protected $routes = [];
-
-    protected $middleware = [];
-
-    protected $listeners = [];
-
-    protected $aliases = [];
-
-    protected $bindings = [];
-
-    protected $providers = [];
-
-    protected $singletons = [];
-
-    protected $overrides = [];
-
-    protected $mobile = [];
-
-    public function register()
-    {
-    }
-
-    public function map()
-    {
-    }
-
+    /**
+     * The addon singletons.
+     *
+     * @var array
+     */
+    protected $singletons = [
+        'Anomaly\DiscountsModule\Discount\Contract\DiscountRepositoryInterface' => 'Anomaly\DiscountsModule\Discount\DiscountRepository'
+    ];
 }

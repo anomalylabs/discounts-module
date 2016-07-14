@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'discount'  => 'Discount',
+    'discount'   => 'Discount',
     'conditions' => 'Conditions',
 ];

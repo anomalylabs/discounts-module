@@ -14,25 +14,32 @@ class DiscountsModule extends Module
 {
 
     /**
-     * The navigation icon.
-     *
-     * @var string
-     */
-    protected $icon = 'addon';
-
-    /**
      * The module sections.
      *
      * @var array
      */
     protected $sections = [
         'discounts' => [
-            'buttons' => [
-                'new_discount' => [
-                    'data-toggle' => 'modal',
-                    'data-target' => '#modal',
-                    'href'        => 'admin/discounts/choose'
-                ]
+            'buttons'  => [
+                'new_discount',
+            ],
+            'sections' => [
+                'filters'    => [
+                    'href'    => 'admin/discounts/filters/{request.route.parameters.discount}',
+                    'buttons' => [
+                        'add_filter',
+                    ],
+                ],
+                'conditions' => [
+                    'href'    => 'admin/discounts/conditions/{request.route.parameters.discount}',
+                    'buttons' => [
+                        'add_condition' => [
+                            'data-toggle' => 'modal',
+                            'data-target' => '#modal',
+                            'href'        => 'admin/discounts/conditions/{request.route.parameters.discount}/choose',
+                        ],
+                    ],
+                ],
             ]
         ]
     ];

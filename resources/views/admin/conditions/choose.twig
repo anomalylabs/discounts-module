@@ -1,0 +1,22 @@
+<div class="modal-header">
+    <button class="close" data-dismiss="modal">
+        <span>&times;</span>
+    </button>
+    <h4 class="modal-title">{{ trans('module::message.choose_condition') }}</h4>
+</div>
+
+<div class="modal-body">
+
+    <ul class="nav nav-pills nav-stacked">
+        {% for condition in conditions %}
+            <li class="nav-item">
+                <a href="{{ url_to('admin/discounts/conditions/' ~ discount.id ~ '/create?condition=' ~ condition.namespace) }}"
+                   class="nav-link">
+                    <strong>{{ trans(condition.getTitle()) }}</strong>
+                    <br>
+                    <small>{{ trans(condition.getDescription()) }}</small>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

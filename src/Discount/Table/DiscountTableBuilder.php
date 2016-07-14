@@ -21,10 +21,10 @@ class DiscountTableBuilder extends TableBuilder
     protected $filters = [
         'search' => [
             'fields' => [
+                'name',
                 'code',
             ]
         ],
-        'extension'
     ];
 
     /**
@@ -33,6 +33,8 @@ class DiscountTableBuilder extends TableBuilder
      * @var array|string
      */
     protected $columns = [
+        'name',
+        'description',
         'code' => [
             'wrapper' => '<pre>{value}</pre>'
         ],

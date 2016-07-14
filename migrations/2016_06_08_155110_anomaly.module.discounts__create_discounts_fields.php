@@ -18,37 +18,58 @@ class AnomalyModuleDiscountsCreateDiscountsFields extends Migration
      * @var array
      */
     protected $fields = [
-        'code'               => 'anomaly.field_type.text',
-        'enabled'            => [
+        'name'                    => 'anomaly.field_type.text',
+        'description'             => 'anomaly.field_type.textarea',
+        'code'                    => 'anomaly.field_type.text',
+        'slug'                    => [
+            'type'   => 'anomaly.field_type.slug',
+            'config' => [
+                'slugify' => 'name',
+                'type'    => '-',
+            ]
+        ],
+        'enabled'                 => [
             'type'   => 'anomaly.field_type.boolean',
             'config' => [
                 'default_value' => true,
             ],
         ],
-        'availability'       => [
+        'allowed_customer_groups' => [
+            'type'   => 'anomaly.field_type.multiple',
+            'config' => [
+                'related' => 'Anomaly\CustomersModule\Group\GroupModel'
+            ]
+        ],
+        'scope'                   => [
             'type'   => 'anomaly.field_type.select',
             'config' => [
                 'mode'          => 'radio',
-                'default_value' => 'unlimited',
+                'default_value' => 'items',
                 'options'       => [
-                    'unlimited' => 'anomaly.module.discounts::field.availability.option.unlimited',
-                    'limited'   => 'anomaly.module.discounts::field.availability.option.limited',
+                    'items' => 'anomaly.module.discounts::field.scope.option.items',
+                    'cart'  => 'anomaly.module.discounts::field.scope.option.cart',
                 ]
             ]
         ],
-        'limit'              => 'anomaly.field_type.integer',
-        'limit_per_customer' => 'anomaly.field_type.integer',
-        'used'               => [
-            'type'   => 'anomaly.field_type.integer',
+        'limit_per_coupon'        => 'anomaly.field_type.integer',
+        'limit_per_customer'      => 'anomaly.field_type.integer',
+        'start_date'              => [
+            'type'   => 'anomaly.field_type.datetime',
             'config' => [
-                'default_value' => 0
+                'mode' => 'date'
             ]
         ],
-        'extension'          => [
+        'end_date'                => [
+            'type'   => 'anomaly.field_type.datetime',
+            'config' => [
+                'mode' => 'date'
+            ]
+        ],
+        'terminating'             => 'anomaly.field_type.boolean',
+        'extension'               => [
             'type'   => 'anomaly.field_type.addon',
             'config' => [
-                'type'   => 'extension',
-                'search' => 'anomaly.module.discounts::discount.*',
+                'type' => 'extension',
             ]
         ],
     ];

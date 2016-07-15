@@ -32,9 +32,11 @@ class FiltersController extends AdminController
     public function index(FilterTableBuilder $table, DiscountRepositoryInterface $discounts, $discount)
     {
         /* @var DiscountInterface $discount */
-        if ($discount = $discounts->find($discount)) {
-            $table->setDiscount($discount);
-        }
+        $discount = $discounts->find($discount);
+
+        $table->setDiscount($discount);
+
+        $this->template->set('discount', $discount);
 
         return $table->render();
     }

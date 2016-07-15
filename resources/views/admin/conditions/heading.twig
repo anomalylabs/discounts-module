@@ -1,0 +1,21 @@
+{% if template.discount %}
+    <div class="card">
+        <div class="card-block">
+
+            <div class="media">
+                <div class="media-body">
+
+                    <h4 class="media-heading">
+                        {{ template.discount.name }} <small><code>{{ template.discount.code }}</code></small>
+                        <br>
+                        <small class="text-muted">{{ template.discount.description }}</small>
+                    </h4>
+
+                    <a href="/admin/discounts/edit/{{ template.discount.id }}">{{ trans('module::message.return_to_discount') }}</a>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endif %}

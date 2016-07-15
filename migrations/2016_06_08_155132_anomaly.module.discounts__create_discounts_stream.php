@@ -22,6 +22,7 @@ class AnomalyModuleDiscountsCreateDiscountsStream extends Migration
         'title_column' => 'code',
         'translatable' => true,
         'trashable'    => true,
+        'sortable'     => true,
     ];
 
     /**

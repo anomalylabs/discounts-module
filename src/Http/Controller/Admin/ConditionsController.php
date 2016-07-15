@@ -32,9 +32,11 @@ class ConditionsController extends AdminController
     public function index(ConditionTableBuilder $table, DiscountRepositoryInterface $discounts, $discount)
     {
         /* @var DiscountInterface $discount */
-        if ($discount = $discounts->find($discount)) {
-            $table->setDiscount($discount);
-        }
+        $discount = $discounts->find($discount);
+
+        $this->template->set('discount', $discount);
+
+        $table->setDiscount($discount);
 
         return $table->render();
     }

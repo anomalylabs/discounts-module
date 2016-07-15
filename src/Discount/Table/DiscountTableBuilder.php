@@ -47,7 +47,7 @@ class DiscountTableBuilder extends TableBuilder
      * @var array|string
      */
     protected $buttons = [
-        'edit'
+        'edit',
     ];
 
     /**
@@ -56,7 +56,7 @@ class DiscountTableBuilder extends TableBuilder
      * @var array|string
      */
     protected $actions = [
-        'delete'
+        'delete',
     ];
 
     /**

@@ -18,8 +18,7 @@ class AnomalyModuleDiscountsCreateConditionsStream extends Migration
      * @var array
      */
     protected $stream = [
-        'slug'     => 'conditions',
-        'sortable' => true,
+        'slug' => 'conditions',
     ];
 
     /**
@@ -34,7 +33,7 @@ class AnomalyModuleDiscountsCreateConditionsStream extends Migration
                 'search' => 'anomaly.module.discounts::condition.*',
             ],
         ],
-        'discount' => [
+        'discount'  => [
             'required' => true,
         ],
     ];

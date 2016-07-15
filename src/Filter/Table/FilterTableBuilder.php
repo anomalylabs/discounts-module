@@ -23,13 +23,6 @@ class FilterTableBuilder extends TableBuilder
     protected $discount = null;
 
     /**
-     * The table columns.
-     *
-     * @var array|string
-     */
-    protected $columns = [];
-
-    /**
      * The table buttons.
      *
      * @var array|string
@@ -45,6 +38,15 @@ class FilterTableBuilder extends TableBuilder
      */
     protected $actions = [
         'delete'
+    ];
+
+    /**
+     * The heading options.
+     *
+     * @var array
+     */
+    protected $options = [
+        'heading' => 'anomaly.module.discounts::admin/filters/heading'
     ];
 
     /**

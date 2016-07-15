@@ -42,19 +42,17 @@ class AnomalyModuleDiscountsCreateDiscountsStream extends Migration
         'description'  => [
             'translatable' => true,
         ],
-        'code'         => [
+        'scope'        => [
             'unique' => true,
+        ],
+        'code',
+        'amount' => [
+            'required' => true,
         ],
         'allowed_customer_groups',
         'enabled',
-        'availability' => [
-            'required' => true,
-        ],
         'limit_per_coupon',
         'limit_per_customer',
-        'used'         => [
-            'required' => true,
-        ],
     ];
 
 }

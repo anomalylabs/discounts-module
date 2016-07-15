@@ -21,6 +21,7 @@ class AnomalyModuleDiscountsCreateDiscountsFields extends Migration
         'name'                    => 'anomaly.field_type.text',
         'description'             => 'anomaly.field_type.textarea',
         'code'                    => 'anomaly.field_type.text',
+        'amount'                  => 'anomaly.field_type.text',
         'slug'                    => [
             'type'   => 'anomaly.field_type.slug',
             'config' => [

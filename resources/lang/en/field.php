@@ -2,18 +2,27 @@
 
 return [
     'name'                    => [
-        'name' => 'Name',
+        'name'         => 'Name',
+        'instructions' => 'Specify a short descriptive name.',
     ],
     'description'             => [
-        'name' => 'Description',
+        'name'         => 'Description',
+        'instructions' => 'Briefly describe this discount.',
     ],
     'slug'                    => [
-        'name' => 'Slug',
+        'name'         => 'Slug',
+        'instructions' => 'The slug is used when accessing the discount via API.',
+    ],
+    'amount'                  => [
+        'name'         => 'Amount',
+        'label'        => 'Discount Amount',
+        'instructions' => 'Specify the discount amount or percentage (19.95 or 25%).',
     ],
     'code'                    => [
         'name'         => 'Code',
         'label'        => 'Discount Code',
-        'instructions' => 'Customers will enter this discount code at checkout.',
+        'instructions' => 'This is the code that customers will enter upon checkout.',
+        'warning'      => 'If left blank the discount will be applied if all conditions are true.',
     ],
     'enabled'                 => [
         'name' => 'Enabled',

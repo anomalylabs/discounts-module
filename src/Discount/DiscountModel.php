@@ -14,4 +14,13 @@ use Anomaly\Streams\Platform\Model\Discounts\DiscountsDiscountsEntryModel;
 class DiscountModel extends DiscountsDiscountsEntryModel implements DiscountInterface
 {
 
+    /**
+     * Get the amount.
+     *
+     * @return string
+     */
+    public function getAmount()
+    {
+        return $this->amount;
+    }
 }

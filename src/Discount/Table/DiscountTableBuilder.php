@@ -28,20 +28,6 @@ class DiscountTableBuilder extends TableBuilder
     ];
 
     /**
-     * The table columns.
-     *
-     * @var array|string
-     */
-    protected $columns = [
-        'name',
-        'description',
-        'code' => [
-            'wrapper' => '<pre>{value}</pre>'
-        ],
-        'entry.enabled.label',
-    ];
-
-    /**
      * The table buttons.
      *
      * @var array|string

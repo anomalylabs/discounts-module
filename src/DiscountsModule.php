@@ -27,7 +27,11 @@ class DiscountsModule extends Module
                 'filters'    => [
                     'href'    => 'admin/discounts/filters/{request.route.parameters.discount}',
                     'buttons' => [
-                        'add_filter',
+                        'add_filter' => [
+                            'data-toggle' => 'modal',
+                            'data-target' => '#modal',
+                            'href'        => 'admin/discounts/filters/{request.route.parameters.discount}/choose',
+                        ],
                     ],
                 ],
                 'conditions' => [

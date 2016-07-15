@@ -2,6 +2,7 @@
 
 use Anomaly\DiscountsModule\Discount\Contract\DiscountInterface;
 use Anomaly\Streams\Platform\Ui\Table\TableBuilder;
+use Illuminate\Database\Eloquent\Builder;
 
 /**
  * Class ConditionTableBuilder
@@ -45,6 +46,18 @@ class ConditionTableBuilder extends TableBuilder
     protected $actions = [
         'delete'
     ];
+
+    /**
+     * Fired just before querying.
+     *
+     * @param Builder $query
+     */
+    public function onQuerying(Builder $query)
+    {
+        if ($discount = $this->getDiscount()) {
+            $query->where('discount_id', $discount->getId());
+        }
+    }
 
     /**
      * Get the discount.

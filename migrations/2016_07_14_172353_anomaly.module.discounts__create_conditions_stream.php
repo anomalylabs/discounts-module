@@ -32,8 +32,11 @@ class AnomalyModuleDiscountsCreateConditionsStream extends Migration
             'required' => true,
             'config'   => [
                 'search' => 'anomaly.module.discounts::condition.*',
-            ]
-        ]
+            ],
+        ],
+        'discount' => [
+            'required' => true,
+        ],
     ];
 
 }

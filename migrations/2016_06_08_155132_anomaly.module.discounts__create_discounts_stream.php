@@ -54,9 +54,6 @@ class AnomalyModuleDiscountsCreateDiscountsStream extends Migration
         'used'         => [
             'required' => true,
         ],
-        'extension'    => [
-            'required' => true,
-        ],
     ];
 
 }

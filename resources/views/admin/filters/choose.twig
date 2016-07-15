@@ -1,0 +1,22 @@
+<div class="modal-header">
+    <button class="close" data-dismiss="modal">
+        <span>&times;</span>
+    </button>
+    <h4 class="modal-title">{{ trans('module::message.choose_filter') }}</h4>
+</div>
+
+<div class="modal-body">
+
+    <ul class="nav nav-pills nav-stacked">
+        {% for filter in filters %}
+            <li class="nav-item">
+                <a href="{{ url_to('admin/discounts/filters/' ~ discount.id ~ '/create?filter=' ~ filter.namespace) }}"
+                   class="nav-link">
+                    <strong>{{ trans(filter.getTitle()) }}</strong>
+                    <br>
+                    <small>{{ trans(filter.getDescription()) }}</small>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

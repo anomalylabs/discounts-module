@@ -1,8 +1,9 @@
 <?php namespace Anomaly\DiscountsModule\Http\Controller\Admin;
 
+use Anomaly\DiscountsModule\Condition\Contract\ConditionInterface;
+use Anomaly\DiscountsModule\Condition\Contract\ConditionRepositoryInterface;
 use Anomaly\DiscountsModule\Condition\Extension\Contract\ConditionExtensionInterface;
 use Anomaly\DiscountsModule\Condition\Extension\Form\ConditionExtensionFormBuilder;
-use Anomaly\DiscountsModule\Condition\Form\ConditionFormBuilder;
 use Anomaly\DiscountsModule\Condition\Table\ConditionTableBuilder;
 use Anomaly\DiscountsModule\Discount\Contract\DiscountInterface;
 use Anomaly\DiscountsModule\Discount\Contract\DiscountRepositoryInterface;
@@ -73,13 +74,11 @@ class ConditionsController extends AdminController
         /* @var ConditionExtensionInterface $extension */
         $extension = $extensions->get($this->request->get('condition'));
 
-        /* @var ConditionExtensionFormBuilder $form */
-        $form = $extension->form();
-
         /* @var DiscountInterface $discount */
-        if ($discount = $discounts->find($discount)) {
-            $form->setDiscount($discount);
-        }
+        $discount = $discounts->find($discount);
+
+        /* @var ConditionExtensionFormBuilder $form */
+        $form = $extension->form($discount);
 
         return $form->render();
     }
@@ -87,12 +86,30 @@ class ConditionsController extends AdminController
     /**
      * Edit an existing entry.
      *
-     * @param ConditionFormBuilder $form
-     * @param                      $id
+     * @param DiscountRepositoryInterface $discounts
+     * @param                             $discount
+     * @param                             $id
      * @return \Symfony\Component\HttpFoundation\Response
+     * @internal param ConditionFormBuilder $form
      */
-    public function edit(ConditionFormBuilder $form, $id)
-    {
-        return $form->render($id);
+    public function edit(
+        DiscountRepositoryInterface $discounts,
+        ConditionRepositoryInterface $conditions,
+        $discount,
+        $id
+    ) {
+        /* @var DiscountInterface $discount */
+        $discount = $discounts->find($discount);
+
+        /* @var ConditionInterface $condition */
+        $condition = $conditions->find($id);
+
+        /* @var ConditionExtensionInterface $extension */
+        $extension = $condition->getExtension();
+
+        /* @var ConditionExtensionFormBuilder $form */
+        $form = $extension->form($discount, $condition);
+
+        return $form->render();
     }
 }

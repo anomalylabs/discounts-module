@@ -25,6 +25,12 @@ return [
             'cart'  => 'Discount the entire cart',
         ]
     ],
+    'condition'               => [
+        'name' => 'Condition',
+    ],
+    'filter'                  => [
+        'name' => 'Filter',
+    ],
     'limit_per_coupon'        => [
         'name'         => 'Limit Per Coupon',
         'instructions' => 'Specify the usage limit for this discount code.',

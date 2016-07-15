@@ -72,6 +72,12 @@ class AnomalyModuleDiscountsCreateDiscountsFields extends Migration
                 'type' => 'extension',
             ]
         ],
+        'discount'                => [
+            'type'   => 'anomaly.field_type.relationship',
+            'config' => [
+                'related' => 'Anomaly\DiscountsModule\Discount\DiscountModel',
+            ]
+        ],
     ];
 
 }

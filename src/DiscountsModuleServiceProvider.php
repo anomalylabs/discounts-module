@@ -19,6 +19,7 @@ class DiscountsModuleServiceProvider extends AddonServiceProvider
      * @var array
      */
     protected $singletons = [
+        'Anomaly\DiscountsModule\Filter\Contract\FilterRepositoryInterface'       => 'Anomaly\DiscountsModule\Filter\FilterRepository',
         'Anomaly\DiscountsModule\Discount\Contract\DiscountRepositoryInterface'   => 'Anomaly\DiscountsModule\Discount\DiscountRepository',
         'Anomaly\DiscountsModule\Condition\Contract\ConditionRepositoryInterface' => 'Anomaly\DiscountsModule\Condition\ConditionRepository',
     ];

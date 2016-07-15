@@ -22,17 +22,17 @@ class DiscountFormSections
     {
         $builder->setSections(
             [
-                'general'  => [
+                'discount'  => [
                     'fields' => [
                         'name',
                         'slug',
                         'description',
+                        'code',
                     ],
                 ],
-                'discount' => [
+                'action' => [
                     'fields' => [
                         'amount',
-                        'code',
                         'scope',
                     ],
                 ],

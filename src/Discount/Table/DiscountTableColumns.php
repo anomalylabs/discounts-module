@@ -33,7 +33,7 @@ class DiscountTableColumns
                 ],
                 'amount' => [
                     'wrapper' => function(DiscountInterface $entry) use ($symbol) {
-                        return ends_with($entry->getAmount(), '%') ? $entry->getAmount() : $symbol . $entry->getAmount();
+                        return ends_with($entry->getAmount(), '%') ? $entry->getAmount() : $symbol . number_format($entry->getAmount(), 2);
                     }
                 ],
                 'entry.enabled.label',

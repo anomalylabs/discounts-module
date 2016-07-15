@@ -1,9 +1,10 @@
 <?php namespace Anomaly\DiscountsModule\Filter\Extension;
 
+use Anomaly\DiscountsModule\Discount\Contract\DiscountInterface;
 use Anomaly\DiscountsModule\Filter\Contract\FilterInterface;
 use Anomaly\DiscountsModule\Filter\Extension\Contract\FilterExtensionInterface;
 use Anomaly\DiscountsModule\Filter\Extension\Form\FilterExtensionFormBuilder;
-use Anomaly\DiscountsModule\Discount\Contract\DiscountInterface;
+use Anomaly\ProductsModule\Product\Contract\ProductInterface;
 use Anomaly\Streams\Platform\Addon\Extension\Extension;
 
 /**
@@ -20,8 +21,8 @@ class FilterExtension extends Extension implements FilterExtensionInterface
     /**
      * Return the form builder.
      *
-     * @param DiscountInterface  $discount
-     * @param FilterInterface $filter
+     * @param DiscountInterface $discount
+     * @param FilterInterface   $filter
      * @return FilterExtensionFormBuilder
      * @throws \Exception
      */
@@ -33,11 +34,25 @@ class FilterExtension extends Extension implements FilterExtensionInterface
     /**
      * Return the column value for the table.
      *
-     * @param DiscountInterface  $discount
-     * @param FilterInterface $filter
+     * @param DiscountInterface $discount
+     * @param FilterInterface   $filter
      * @return string
      */
     public function column(DiscountInterface $discount, FilterInterface $filter)
+    {
+        throw new \Exception(get_class($this) . ' must implement the ' . __FUNCTION__ . ' method.');
+    }
+
+    /**
+     * Return if a product passes the filter or not.
+     *
+     * @param DiscountInterface $discount
+     * @param FilterInterface   $filter
+     * @param ProductInterface  $product
+     * @return bool
+     * @throws \Exception
+     */
+    public function passes(DiscountInterface $discount, FilterInterface $filter, ProductInterface $product)
     {
         throw new \Exception(get_class($this) . ' must implement the ' . __FUNCTION__ . ' method.');
     }

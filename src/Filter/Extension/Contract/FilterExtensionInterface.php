@@ -41,5 +41,5 @@ interface FilterExtensionInterface
      * @param ProductInterface  $product
      * @return bool
      */
-    public function passes(DiscountInterface $discount, ProductInterface $product);
+    /*public function passes(DiscountInterface $discount, ProductInterface $product);*/
 }

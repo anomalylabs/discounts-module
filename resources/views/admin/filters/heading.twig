@@ -6,7 +6,10 @@
                 <div class="media-body">
 
                     <h4 class="media-heading">
-                        {{ template.discount.name }} <small><code>{{ template.discount.code }}</code></small>
+                        {{ template.discount.name }}
+                        {% if template.discount.value %}
+                            <small><code>{{ template.discount.code }}</code></small>
+                        {% endif %}
                         <br>
                         <small class="text-muted">{{ template.discount.description }}</small>
                     </h4>

@@ -2,31 +2,28 @@
 
 use Anomaly\DiscountsModule\Discount\Contract\DiscountInterface;
 use Anomaly\OrdersModule\Order\Contract\OrderInterface;
-use Anomaly\Streams\Platform\Entry\EntryCollection;
 
 /**
- * Class DiscountCollection
+ * Class DiscountCalculator
  *
  * @link          http://pyrocms.com/
  * @author        PyroCMS, Inc. <support@pyrocms.com>
  * @author        Ryan Thompson <ryan@pyrocms.com>
  * @package       Anomaly\DiscountsModule\Discount
  */
-class DiscountCollection extends EntryCollection
+class DiscountCalculator
 {
 
     /**
-     * Return only matching discounts.
+     * Calculate the discount amount.
      *
      * @param OrderInterface $order
-     * @return $this
+     * @return float
      */
-    public function matching(OrderInterface $order)
+    public function calculate(DiscountInterface $discount, OrderInterface $order)
     {
-        return $this->filter(
-            function (DiscountInterface $discount) use ($order) {
-                return (new DiscountMatcher($discount))->matches($order);
-            }
-        );
+        $extension = $discount->extension();
+
+        return $extension->calculate($order);
     }
 }

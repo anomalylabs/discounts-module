@@ -21,7 +21,11 @@ class DiscountsModule extends Module
     protected $sections = [
         'discounts' => [
             'buttons'  => [
-                'new_discount',
+                'new_discount' => [
+                    'data-toggle' => 'modal',
+                    'data-target' => '#modal',
+                    'href'        => 'admin/discounts/choose',
+                ],
             ],
             'sections' => [
                 'filters'    => [

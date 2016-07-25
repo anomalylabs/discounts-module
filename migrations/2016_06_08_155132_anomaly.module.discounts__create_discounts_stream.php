@@ -31,28 +31,29 @@ class AnomalyModuleDiscountsCreateDiscountsStream extends Migration
      * @var array
      */
     protected $assignments = [
-        'name'         => [
+        'name'        => [
             'required'     => true,
             'translatable' => true,
         ],
-        'slug'         => [
+        'slug'        => [
             'required' => true,
             'unique'   => true,
         ],
-        'description'  => [
+        'description' => [
             'translatable' => true,
         ],
-        'scope'        => [
-            'unique' => true,
-        ],
         'code',
-        'amount' => [
-            'required' => true,
-        ],
-        'allowed_customer_groups',
         'enabled',
+        'end_date',
+        'start_date',
         'limit_per_coupon',
         'limit_per_customer',
+        'extension'   => [
+            'required' => true,
+            'config'   => [
+                'search' => 'anomaly.module.discounts::discount.*',
+            ],
+        ],
     ];
 
 }

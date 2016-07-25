@@ -1,5 +1,6 @@
 <?php namespace Anomaly\DiscountsModule\Discount\Form;
 
+use Anomaly\DiscountsModule\Discount\DiscountExtension;
 use Anomaly\Streams\Platform\Ui\Form\FormBuilder;
 
 /**
@@ -14,23 +15,54 @@ class DiscountFormBuilder extends FormBuilder
 {
 
     /**
-     * The form buttons.
+     * The discount extension.
+     *
+     * @var DiscountExtension|null
+     */
+    protected $extension = null;
+
+    /**
+     * The skipped fields.
      *
      * @var array
      */
-    protected $buttons = [
-        'conditions' => [
-            'icon'    => 'check-square-alt',
-            'type'    => 'primary',
-            'enabled' => 'edit',
-            'text'    => 'anomaly.module.discounts::button.conditions',
-        ],
-        'filters'    => [
-            'icon'    => 'filter',
-            'type'    => 'primary',
-            'enabled' => 'edit',
-            'text'    => 'anomaly.module.discounts::button.filters',
-        ],
-        'cancel',
+    protected $skips = [
+        'extension',
     ];
+
+    /**
+     * Fired just before saving.
+     */
+    public function onSaving()
+    {
+        if ($extension = $this->getExtension()) {
+
+            $entry = $this->getFormEntry();
+
+            $entry->setAttribute('extension', $extension);
+        }
+    }
+
+    /**
+     * Get the extension.
+     *
+     * @return DiscountExtension
+     */
+    public function getExtension()
+    {
+        return $this->extension;
+    }
+
+    /**
+     * Set the discount.
+     *
+     * @param DiscountExtension $extension
+     * @return $this
+     */
+    public function setExtension(DiscountExtension $extension)
+    {
+        $this->extension = $extension;
+
+        return $this;
+    }
 }

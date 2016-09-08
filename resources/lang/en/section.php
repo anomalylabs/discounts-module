@@ -9,7 +9,7 @@ return [
         'title'       => 'Conditions',
         'description' => 'Conditions determine if a matching discount applies.',
     ],
-    'filters' => [
+    'filters'    => [
         'title'       => 'Filters',
         'description' => 'Filters determine which products the discount can apply to.',
     ],

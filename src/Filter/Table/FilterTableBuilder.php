@@ -28,7 +28,7 @@ class FilterTableBuilder extends TableBuilder
      * @var array|string
      */
     protected $buttons = [
-        'edit'
+        'edit',
     ];
 
     /**
@@ -37,7 +37,7 @@ class FilterTableBuilder extends TableBuilder
      * @var array|string
      */
     protected $actions = [
-        'delete'
+        'delete',
     ];
 
     /**
@@ -46,7 +46,7 @@ class FilterTableBuilder extends TableBuilder
      * @var array
      */
     protected $options = [
-        'heading' => 'anomaly.module.discounts::admin/filters/heading'
+        'heading' => 'anomaly.module.discounts::admin/filters/heading',
     ];
 
     /**

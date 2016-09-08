@@ -48,8 +48,8 @@ class DiscountsModule extends Module
                         ],
                     ],
                 ],
-            ]
-        ]
+            ],
+        ],
     ];
 
 }

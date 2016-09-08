@@ -1,6 +1,5 @@
 <?php namespace Anomaly\DiscountsModule\Discount\Form;
 
-use Illuminate\Contracts\Bus\SelfHandling;
 
 /**
  * Class DiscountExtensionFormSections
@@ -41,7 +40,7 @@ class DiscountExtensionFormSections
                         'discount_start_date',
                         'discount_end_date',
                     ],
-                ]
+                ],
             ]
         );
     }

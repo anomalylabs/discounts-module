@@ -1,7 +1,5 @@
 <?php namespace Anomaly\DiscountsModule\Discount\Table;
 
-use Illuminate\Contracts\Config\Repository;
-
 /**
  * Class DiscountTableColumns
  *
@@ -25,7 +23,7 @@ class DiscountTableColumns
                 'name',
                 'description',
                 'code' => [
-                    'wrapper' => '<pre>{value}</pre>'
+                    'wrapper' => '<pre>{value}</pre>',
                 ],
                 'entry.enabled.label',
             ]

@@ -5,7 +5,7 @@ use Anomaly\DiscountsModule\Discount\Contract\DiscountInterface;
 use Anomaly\DiscountsModule\Discount\DiscountExtension;
 use Anomaly\DiscountsModule\Discount\Form\DiscountExtensionFormBuilder;
 use Anomaly\DiscountsModule\Discount\Form\DiscountFormBuilder;
-use Illuminate\Contracts\Bus\SelfHandling;
+
 
 /**
  * Class GetFormBuilder

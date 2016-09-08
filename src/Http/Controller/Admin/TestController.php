@@ -9,7 +9,5 @@ class TestController extends AdminController
     public function test(ProductRepositoryInterface $products, $id)
     {
         $product = $products->find($id);
-
-
     }
 }

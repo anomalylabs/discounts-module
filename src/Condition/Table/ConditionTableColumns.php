@@ -29,8 +29,8 @@ class ConditionTableColumns
                         $extension = $entry->getExtension();
 
                         return $extension->column($builder->getDiscount(), $entry);
-                    }
-                ]
+                    },
+                ],
             ]
         );
     }

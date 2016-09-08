@@ -32,12 +32,12 @@ return [
         'name'         => 'Limit Per Coupon',
         'instructions' => 'Specify the usage limit for this discount code.',
         'warning'      => 'Only applies when coupon code is entered.',
-        'placeholder'  => '∞'
+        'placeholder'  => '∞',
     ],
     'limit_per_customer' => [
         'name'         => 'Limit Per Customer',
         'instructions' => 'Specify the number of times a customer can use this discount code.',
-        'placeholder'  => '∞'
+        'placeholder'  => '∞',
     ],
     'start_date'         => [
         'name'         => 'Start Date',

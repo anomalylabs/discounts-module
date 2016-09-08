@@ -23,7 +23,7 @@ class DiscountTableBuilder extends TableBuilder
             'fields' => [
                 'name',
                 'code',
-            ]
+            ],
         ],
     ];
 

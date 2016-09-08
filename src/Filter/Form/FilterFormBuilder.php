@@ -1,7 +1,7 @@
 <?php namespace Anomaly\DiscountsModule\Filter\Form;
 
-use Anomaly\DiscountsModule\Filter\Extension\Contract\FilterExtensionInterface;
 use Anomaly\DiscountsModule\Discount\Contract\DiscountInterface;
+use Anomaly\DiscountsModule\Filter\Extension\Contract\FilterExtensionInterface;
 use Anomaly\Streams\Platform\Ui\Form\FormBuilder;
 
 /**

@@ -26,7 +26,7 @@ class AnomalyModuleDiscountsCreateDiscountsFields extends Migration
             'config' => [
                 'slugify' => 'name',
                 'type'    => '-',
-            ]
+            ],
         ],
         'enabled'            => [
             'type'   => 'anomaly.field_type.boolean',
@@ -39,34 +39,34 @@ class AnomalyModuleDiscountsCreateDiscountsFields extends Migration
         'start_date'         => [
             'type'   => 'anomaly.field_type.datetime',
             'config' => [
-                'mode' => 'date'
-            ]
+                'mode' => 'date',
+            ],
         ],
         'end_date'           => [
             'type'   => 'anomaly.field_type.datetime',
             'config' => [
-                'mode' => 'date'
-            ]
+                'mode' => 'date',
+            ],
         ],
         'terminating'        => 'anomaly.field_type.boolean',
         'extension'          => [
             'type'   => 'anomaly.field_type.addon',
             'config' => [
                 'type' => 'extension',
-            ]
+            ],
         ],
         'action'             => [
             'type'   => 'anomaly.field_type.addon',
             'config' => [
                 'type'   => 'extension',
                 'search' => 'anomaly.module.discounts::action.*',
-            ]
+            ],
         ],
         'discount'           => [
             'type'   => 'anomaly.field_type.relationship',
             'config' => [
                 'related' => 'Anomaly\DiscountsModule\Discount\DiscountModel',
-            ]
+            ],
         ],
     ];
 

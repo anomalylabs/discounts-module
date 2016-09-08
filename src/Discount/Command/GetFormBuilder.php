@@ -15,7 +15,7 @@ use Illuminate\Contracts\Bus\SelfHandling;
  * @author        Ryan Thompson <ryan@pyrocms.com>
  * @package       Anomaly\DiscountsModule\Discount\Command
  */
-class GetFormBuilder implements SelfHandling
+class GetFormBuilder
 {
 
     /**

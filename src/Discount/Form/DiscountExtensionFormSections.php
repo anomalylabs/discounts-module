@@ -10,7 +10,7 @@ use Illuminate\Contracts\Bus\SelfHandling;
  * @author        Ryan Thompson <ryan@pyrocms.com>
  * @package       Anomaly\DiscountsModule\Discount\Form
  */
-class DiscountExtensionFormSections implements SelfHandling
+class DiscountExtensionFormSections
 {
 
     /**

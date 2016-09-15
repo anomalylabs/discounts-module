@@ -19,6 +19,7 @@ class DiscountExtensionFormBuilder extends MultipleFormBuilder
      * @var array
      */
     protected $buttons = [
+        'cancel',
         'conditions' => [
             'icon'    => 'check-square-alt',
             'type'    => 'primary',
@@ -33,6 +34,5 @@ class DiscountExtensionFormBuilder extends MultipleFormBuilder
             'text'    => 'anomaly.module.discounts::button.filters',
             'href'    => 'admin/discounts/filters/{request.route.parameters.id}',
         ],
-        'cancel',
     ];
 }

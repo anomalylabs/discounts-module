@@ -53,13 +53,6 @@ class AnomalyModuleDiscountsCreateDiscountsFields extends Migration
                 'type' => 'extension',
             ],
         ],
-        'action'      => [
-            'type'   => 'anomaly.field_type.addon',
-            'config' => [
-                'type'   => 'extension',
-                'search' => 'anomaly.module.discounts::action.*',
-            ],
-        ],
         'discount'    => [
             'type'   => 'anomaly.field_type.relationship',
             'config' => [

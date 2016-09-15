@@ -35,8 +35,6 @@ class DiscountExtensionFormSections
                 'options'  => [
                     'fields' => [
                         'discount_enabled',
-                        'discount_limit_per_coupon',
-                        'discount_limit_per_customer',
                         'discount_start_date',
                         'discount_end_date',
                     ],

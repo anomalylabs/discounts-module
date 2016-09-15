@@ -65,10 +65,10 @@ class GetFormBuilder
         } else {
             $configuration->on(
                 'saving',
-                function () use ($configuration) {
+                function () use ($configuration, $discount) {
 
                     /* @var DiscountInterface $entry */
-                    $entry = $this->discount->getId();
+                    $entry = $discount->getFormEntry();
 
                     $configuration->setScope($entry->getSlug());
                 }

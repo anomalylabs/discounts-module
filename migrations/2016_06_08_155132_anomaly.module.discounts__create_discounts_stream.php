@@ -46,8 +46,6 @@ class AnomalyModuleDiscountsCreateDiscountsStream extends Migration
         'enabled',
         'end_date',
         'start_date',
-        'limit_per_coupon',
-        'limit_per_customer',
         'extension'   => [
             'required' => true,
             'config'   => [

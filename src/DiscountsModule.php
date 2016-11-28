@@ -14,6 +14,13 @@ class DiscountsModule extends Module
 {
 
     /**
+     * The addon icon.
+     *
+     * @var string
+     */
+    protected $icon = 'glyphicons glyphicons-scissors';
+
+    /**
      * The module sections.
      *
      * @var array

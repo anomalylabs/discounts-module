@@ -70,6 +70,27 @@ class DiscountModel extends DiscountsDiscountsEntryModel implements DiscountInte
     }
 
     /**
+     * Get the code.
+     *
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->code;
+    }
+
+    /**
+     * Return if the discount
+     * has a coupon code or not.
+     *
+     * @return bool
+     */
+    public function hasCode()
+    {
+        return (bool)$this->code;
+    }
+
+    /**
      * Get the extension.
      *
      * @return DiscountExtension

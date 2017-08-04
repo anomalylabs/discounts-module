@@ -38,6 +38,21 @@ interface DiscountInterface extends EntryInterface
     public function getAmount();
 
     /**
+     * Get the code.
+     *
+     * @return string
+     */
+    public function getCode();
+
+    /**
+     * Return if the discount
+     * has a coupon code or not.
+     *
+     * @return bool
+     */
+    public function hasCode();
+
+    /**
      * Get the extension.
      *
      * @return DiscountExtension

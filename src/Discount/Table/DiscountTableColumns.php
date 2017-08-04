@@ -1,5 +1,7 @@
 <?php namespace Anomaly\DiscountsModule\Discount\Table;
 
+use Anomaly\DiscountsModule\Discount\Contract\DiscountInterface;
+
 /**
  * Class DiscountTableColumns
  *
@@ -23,7 +25,9 @@ class DiscountTableColumns
                 'name',
                 'description',
                 'code' => [
-                    'wrapper' => '<pre>{value}</pre>',
+                    'wrapper' => function(DiscountInterface $entry) {
+                return $entry->hasCode() ? '<code>{value}</code>' : null;
+                    },
                 ],
                 'entry.enabled.label',
             ]

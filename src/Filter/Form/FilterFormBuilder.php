@@ -1,7 +1,7 @@
 <?php namespace Anomaly\DiscountsModule\Filter\Form;
 
 use Anomaly\DiscountsModule\Discount\Contract\DiscountInterface;
-use Anomaly\DiscountsModule\Filter\Extension\Contract\FilterExtensionInterface;
+use Anomaly\DiscountsModule\Filter\Extension\FilterExtension;
 use Anomaly\Streams\Platform\Ui\Form\FormBuilder;
 
 /**
@@ -35,7 +35,7 @@ class FilterFormBuilder extends FormBuilder
     /**
      * The extension instance.
      *
-     * @var null|FilterExtensionInterface
+     * @var null|FilterExtension
      */
     protected $extension = null;
 
@@ -79,7 +79,7 @@ class FilterFormBuilder extends FormBuilder
     /**
      * Get the extension.
      *
-     * @return FilterExtensionInterface|null
+     * @return FilterExtension|null
      */
     public function getExtension()
     {
@@ -89,10 +89,10 @@ class FilterFormBuilder extends FormBuilder
     /**
      * Set the extension.
      *
-     * @param FilterExtensionInterface $extension
+     * @param FilterExtension $extension
      * @return $this
      */
-    public function setExtension(FilterExtensionInterface $extension)
+    public function setExtension(FilterExtension $extension)
     {
         $this->extension = $extension;
 

@@ -2,21 +2,25 @@
 
 use Anomaly\DiscountsModule\Discount\Contract\DiscountInterface;
 use Anomaly\DiscountsModule\Filter\Contract\FilterInterface;
-use Anomaly\DiscountsModule\Filter\Extension\Contract\FilterExtensionInterface;
 use Anomaly\DiscountsModule\Filter\Extension\Form\FilterExtensionFormBuilder;
-use Anomaly\ProductsModule\Product\Contract\ProductInterface;
 use Anomaly\Streams\Platform\Addon\Extension\Extension;
 
 /**
  * Class FilterExtension
  *
- * @link          http://pyrocms.com/
- * @author        PyroCMS, Inc. <support@pyrocms.com>
- * @author        Ryan Thompson <ryan@pyrocms.com>
- * @package       Anomaly\DiscountsModule\Filter\Extension
+ * @link   http://pyrocms.com/
+ * @author PyroCMS, Inc. <support@pyrocms.com>
+ * @author Ryan Thompson <ryan@pyrocms.com>
  */
-class FilterExtension extends Extension implements FilterExtensionInterface
+class FilterExtension extends Extension
 {
+
+    /**
+     * The filter instance.
+     *
+     * @var FilterInterface
+     */
+    protected $filter;
 
     /**
      * Return the form builder.
@@ -44,16 +48,36 @@ class FilterExtension extends Extension implements FilterExtensionInterface
     }
 
     /**
-     * Return if a product passes the filter or not.
+     * Return if the filter matches or not.
      *
-     * @param DiscountInterface $discount
-     * @param FilterInterface   $filter
-     * @param ProductInterface  $product
-     * @return bool
-     * @throws \Exception
+     * @param $target
+     * @return string
      */
-    public function passes(DiscountInterface $discount, FilterInterface $filter, ProductInterface $product)
+    public function matches($target)
     {
         throw new \Exception(get_class($this) . ' must implement the ' . __FUNCTION__ . ' method.');
+    }
+
+    /**
+     * Set the filter.
+     *
+     * @param FilterInterface $filter
+     * @return $this
+     */
+    public function setFilter(FilterInterface $filter)
+    {
+        $this->filter = $filter;
+
+        return $this;
+    }
+
+    /**
+     * Get the filter.
+     *
+     * @return FilterInterface
+     */
+    public function getFilter()
+    {
+        return $this->filter;
     }
 }

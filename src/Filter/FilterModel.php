@@ -1,7 +1,7 @@
 <?php namespace Anomaly\DiscountsModule\Filter;
 
 use Anomaly\DiscountsModule\Filter\Contract\FilterInterface;
-use Anomaly\DiscountsModule\Filter\Extension\Contract\FilterExtensionInterface;
+use Anomaly\DiscountsModule\Filter\Extension\FilterExtension;
 use Anomaly\Streams\Platform\Model\Discounts\DiscountsFiltersEntryModel;
 
 /**
@@ -16,9 +16,21 @@ class FilterModel extends DiscountsFiltersEntryModel implements FilterInterface
 {
 
     /**
+     * Return the extension.
+     *
+     * @return FilterExtension
+     */
+    public function extension()
+    {
+        return $this
+            ->getExtension()
+            ->setFilter($this);
+    }
+
+    /**
      * Get the extension.
      *
-     * @return FilterExtensionInterface
+     * @return FilterExtension
      */
     public function getExtension()
     {

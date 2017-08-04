@@ -3,7 +3,7 @@
 use Anomaly\DiscountsModule\Discount\Command\GetFormBuilder;
 use Anomaly\DiscountsModule\Discount\Contract\DiscountInterface;
 use Anomaly\DiscountsModule\Discount\Form\DiscountExtensionFormBuilder;
-use Anomaly\OrdersModule\Order\Contract\OrderInterface;
+use Anomaly\StoreModule\Contract\OrderInterface;
 use Anomaly\Streams\Platform\Addon\Extension\Extension;
 
 /**
@@ -42,7 +42,7 @@ class DiscountExtension extends Extension
      */
     public function calculate(OrderInterface $order)
     {
-        return $order->subtotal() * .1;
+        throw new \Exception(__CLASS__ . "must implement " . __METHOD__);
     }
 
     /**

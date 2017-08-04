@@ -1,6 +1,6 @@
 <?php namespace Anomaly\DiscountsModule\Condition\Form;
 
-use Anomaly\DiscountsModule\Condition\Extension\Contract\ConditionExtensionInterface;
+use Anomaly\DiscountsModule\Condition\Extension\ConditionExtension;
 use Anomaly\DiscountsModule\Discount\Contract\DiscountInterface;
 use Anomaly\Streams\Platform\Ui\Form\FormBuilder;
 
@@ -35,7 +35,7 @@ class ConditionFormBuilder extends FormBuilder
     /**
      * The extension instance.
      *
-     * @var null|ConditionExtensionInterface
+     * @var null|ConditionExtension
      */
     protected $extension = null;
 
@@ -79,7 +79,7 @@ class ConditionFormBuilder extends FormBuilder
     /**
      * Get the extension.
      *
-     * @return ConditionExtensionInterface|null
+     * @return ConditionExtension|null
      */
     public function getExtension()
     {
@@ -89,10 +89,10 @@ class ConditionFormBuilder extends FormBuilder
     /**
      * Set the extension.
      *
-     * @param ConditionExtensionInterface $extension
+     * @param ConditionExtension $extension
      * @return $this
      */
-    public function setExtension(ConditionExtensionInterface $extension)
+    public function setExtension(ConditionExtension $extension)
     {
         $this->extension = $extension;
 

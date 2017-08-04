@@ -1,6 +1,7 @@
 <?php namespace Anomaly\DiscountsModule\Filter\Contract;
 
-use Anomaly\DiscountsModule\Filter\Extension\Contract\FilterExtensionInterface;
+use Anomaly\DiscountsModule\Condition\Extension\ConditionExtension;
+use Anomaly\DiscountsModule\Filter\Extension\FilterExtension;
 use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
 
 /**
@@ -15,9 +16,16 @@ interface FilterInterface extends EntryInterface
 {
 
     /**
+     * Return the extension.
+     *
+     * @return ConditionExtension
+     */
+    public function extension();
+
+    /**
      * Get the extension.
      *
-     * @return FilterExtensionInterface
+     * @return FilterExtension
      */
     public function getExtension();
 }

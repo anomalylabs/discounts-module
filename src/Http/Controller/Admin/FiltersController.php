@@ -4,7 +4,7 @@ use Anomaly\DiscountsModule\Discount\Contract\DiscountInterface;
 use Anomaly\DiscountsModule\Discount\Contract\DiscountRepositoryInterface;
 use Anomaly\DiscountsModule\Filter\Contract\FilterInterface;
 use Anomaly\DiscountsModule\Filter\Contract\FilterRepositoryInterface;
-use Anomaly\DiscountsModule\Filter\Extension\Contract\FilterExtensionInterface;
+use Anomaly\DiscountsModule\Filter\Extension\FilterExtension;
 use Anomaly\DiscountsModule\Filter\Extension\Form\FilterExtensionFormBuilder;
 use Anomaly\DiscountsModule\Filter\Table\FilterTableBuilder;
 use Anomaly\Streams\Platform\Addon\Extension\ExtensionCollection;
@@ -73,7 +73,7 @@ class FiltersController extends AdminController
      */
     public function create(DiscountRepositoryInterface $discounts, ExtensionCollection $extensions, $discount)
     {
-        /* @var FilterExtensionInterface $extension */
+        /* @var FilterExtension $extension */
         $extension = $extensions->get($this->request->get('filter'));
 
         /* @var DiscountInterface $discount */
@@ -106,7 +106,7 @@ class FiltersController extends AdminController
         /* @var FilterInterface $filter */
         $filter = $filters->find($id);
 
-        /* @var FilterExtensionInterface $extension */
+        /* @var FilterExtension $extension */
         $extension = $filter->getExtension();
 
         /* @var FilterExtensionFormBuilder $form */

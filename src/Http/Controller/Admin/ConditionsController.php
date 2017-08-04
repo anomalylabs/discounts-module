@@ -2,7 +2,7 @@
 
 use Anomaly\DiscountsModule\Condition\Contract\ConditionInterface;
 use Anomaly\DiscountsModule\Condition\Contract\ConditionRepositoryInterface;
-use Anomaly\DiscountsModule\Condition\Extension\Contract\ConditionExtensionInterface;
+use Anomaly\DiscountsModule\Condition\Extension\ConditionExtension;
 use Anomaly\DiscountsModule\Condition\Extension\Form\ConditionExtensionFormBuilder;
 use Anomaly\DiscountsModule\Condition\Table\ConditionTableBuilder;
 use Anomaly\DiscountsModule\Discount\Contract\DiscountInterface;
@@ -73,7 +73,7 @@ class ConditionsController extends AdminController
      */
     public function create(DiscountRepositoryInterface $discounts, ExtensionCollection $extensions, $discount)
     {
-        /* @var ConditionExtensionInterface $extension */
+        /* @var ConditionExtension $extension */
         $extension = $extensions->get($this->request->get('condition'));
 
         /* @var DiscountInterface $discount */
@@ -106,7 +106,7 @@ class ConditionsController extends AdminController
         /* @var ConditionInterface $condition */
         $condition = $conditions->find($id);
 
-        /* @var ConditionExtensionInterface $extension */
+        /* @var ConditionExtension $extension */
         $extension = $condition->getExtension();
 
         /* @var ConditionExtensionFormBuilder $form */

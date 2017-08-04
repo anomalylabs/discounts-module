@@ -1,6 +1,6 @@
 <?php namespace Anomaly\DiscountsModule\Condition\Contract;
 
-use Anomaly\DiscountsModule\Condition\Extension\Contract\ConditionExtensionInterface;
+use Anomaly\DiscountsModule\Condition\Extension\ConditionExtension;
 use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
 
 /**
@@ -15,9 +15,16 @@ interface ConditionInterface extends EntryInterface
 {
 
     /**
+     * Return the extension.
+     *
+     * @return ConditionExtension
+     */
+    public function extension();
+
+    /**
      * Get the extension.
      *
-     * @return ConditionExtensionInterface
+     * @return ConditionExtension
      */
     public function getExtension();
 }

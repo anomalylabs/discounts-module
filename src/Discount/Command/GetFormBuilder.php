@@ -61,7 +61,7 @@ class GetFormBuilder
         $builder->addForm('configuration', $configuration->setEntry($this->extension->getNamespace()));
 
         if ($this->discount) {
-            $configuration->setScope($this->discount->getSlug());
+            $configuration->setScope($this->discount->getId());
         } else {
             $configuration->on(
                 'saving',

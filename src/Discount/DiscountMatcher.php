@@ -1,7 +1,6 @@
 <?php namespace Anomaly\DiscountsModule\Discount;
 
 use Anomaly\DiscountsModule\Discount\Contract\DiscountInterface;
-use Anomaly\OrdersModule\Order\Contract\OrderInterface;
 
 /**
  * Class DiscountMatcher
@@ -32,12 +31,25 @@ class DiscountMatcher
     }
 
     /**
-     * Return if the discount matches the order.
+     * Return if the discount matches or not.
      *
-     * @param OrderInterface $order
+     * @param $target
+     * @return bool
      */
-    public function matches(OrderInterface $order)
+    public function matches($target)
     {
+        $filters = $this->discount->getConditions();
+
+        if (!$filters->match($target)) {
+            return false;
+        }
+
+        $conditions = $this->discount->getConditions();
+
+        if (!$conditions->match($target)) {
+            return false;
+        }
+
         return true;
     }
 }

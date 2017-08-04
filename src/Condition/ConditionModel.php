@@ -15,6 +15,16 @@ class ConditionModel extends DiscountsConditionsEntryModel implements ConditionI
 {
 
     /**
+     * Get the extension.
+     *
+     * @return ConditionExtension
+     */
+    public function getExtension()
+    {
+        return $this->extension;
+    }
+
+    /**
      * Return the extension.
      *
      * @return ConditionExtension
@@ -24,15 +34,5 @@ class ConditionModel extends DiscountsConditionsEntryModel implements ConditionI
         return $this
             ->getExtension()
             ->setCondition($this);
-    }
-
-    /**
-     * Get the extension.
-     *
-     * @return ConditionExtension
-     */
-    public function getExtension()
-    {
-        return $this->extension;
     }
 }

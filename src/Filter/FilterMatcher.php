@@ -38,7 +38,7 @@ class FilterMatcher
     public function matches($target)
     {
         return $this->filter
-            ->getExtension()
+            ->extension()
             ->matches($target);
     }
 }

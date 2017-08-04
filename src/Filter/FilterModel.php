@@ -16,6 +16,16 @@ class FilterModel extends DiscountsFiltersEntryModel implements FilterInterface
 {
 
     /**
+     * Get the extension.
+     *
+     * @return FilterExtension
+     */
+    public function getExtension()
+    {
+        return $this->extension;
+    }
+
+    /**
      * Return the extension.
      *
      * @return FilterExtension
@@ -25,15 +35,5 @@ class FilterModel extends DiscountsFiltersEntryModel implements FilterInterface
         return $this
             ->getExtension()
             ->setFilter($this);
-    }
-
-    /**
-     * Get the extension.
-     *
-     * @return FilterExtension
-     */
-    public function getExtension()
-    {
-        return $this->extension;
     }
 }

@@ -38,7 +38,7 @@ class ConditionMatcher
     public function matches($target)
     {
         return $this->condition
-            ->getExtension()
+            ->extension()
             ->matches($target);
     }
 }

@@ -1,6 +1,8 @@
 <?php namespace Anomaly\DiscountsModule\Discount\Contract;
 
+use Anomaly\DiscountsModule\Condition\ConditionCollection;
 use Anomaly\DiscountsModule\Discount\DiscountExtension;
+use Anomaly\DiscountsModule\Filter\FilterCollection;
 use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
 
 /**
@@ -13,13 +15,6 @@ use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
  */
 interface DiscountInterface extends EntryInterface
 {
-
-    /**
-     * Return the discount extension.
-     *
-     * @return DiscountExtension
-     */
-    public function extension();
 
     /**
      * Get the slug.
@@ -48,4 +43,25 @@ interface DiscountInterface extends EntryInterface
      * @return DiscountExtension
      */
     public function getExtension();
+
+    /**
+     * Return the discount extension.
+     *
+     * @return DiscountExtension
+     */
+    public function extension();
+
+    /**
+     * Get the filters.
+     *
+     * @return FilterCollection
+     */
+    public function getFilters();
+
+    /**
+     * Get the conditions.
+     *
+     * @return ConditionCollection
+     */
+    public function getConditions();
 }

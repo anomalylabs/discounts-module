@@ -34,13 +34,13 @@ class DiscountTableBuilder extends TableBuilder
      */
     protected $buttons = [
         'edit',
-        'conditions' => [
-            'type' => 'primary',
-            'icon' => 'check-square-alt',
-        ],
         'filters'    => [
             'icon' => 'filter',
             'type' => 'primary',
+        ],
+        'conditions' => [
+            'type' => 'primary',
+            'icon' => 'check-square-alt',
         ],
     ];
 
@@ -52,19 +52,5 @@ class DiscountTableBuilder extends TableBuilder
     protected $actions = [
         'delete',
     ];
-
-    /**
-     * The table options.
-     *
-     * @var array
-     */
-    protected $options = [];
-
-    /**
-     * The table assets.
-     *
-     * @var array
-     */
-    protected $assets = [];
 
 }

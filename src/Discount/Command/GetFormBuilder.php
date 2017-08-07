@@ -70,7 +70,7 @@ class GetFormBuilder
                     /* @var DiscountInterface $entry */
                     $entry = $discount->getFormEntry();
 
-                    $configuration->setScope($entry->getSlug());
+                    $configuration->setScope($entry->getId());
                 }
             );
         }

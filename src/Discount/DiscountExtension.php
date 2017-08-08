@@ -3,7 +3,6 @@
 use Anomaly\DiscountsModule\Discount\Command\GetFormBuilder;
 use Anomaly\DiscountsModule\Discount\Contract\DiscountInterface;
 use Anomaly\DiscountsModule\Discount\Form\DiscountExtensionFormBuilder;
-use Anomaly\StoreModule\Contract\OrderInterface;
 use Anomaly\Streams\Platform\Addon\Extension\Extension;
 
 /**
@@ -35,12 +34,11 @@ class DiscountExtension extends Extension
     }
 
     /**
-     * Calculate the discount.
+     * Apply the discount.
      *
-     * @param OrderInterface $order
-     * @return float
+     * @param $target
      */
-    public function calculate(OrderInterface $order)
+    public function apply($target)
     {
         throw new \Exception(__CLASS__ . "must implement " . __METHOD__);
     }
@@ -53,6 +51,16 @@ class DiscountExtension extends Extension
     public function getDiscount()
     {
         return $this->discount;
+    }
+
+    /**
+     * Get the discount ID.
+     *
+     * @return int
+     */
+    public function getDiscountId()
+    {
+        return $this->discount->getId();
     }
 
     /**

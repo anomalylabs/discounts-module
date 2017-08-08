@@ -39,6 +39,9 @@ class DiscountRepository extends EntryRepository implements DiscountRepositoryIn
      */
     public function enabled()
     {
-        return $this->model->available()->where('enabled', true)->get();
+        return $this->model
+                ->available()
+                ->where('enabled', true)
+                ->get();
     }
 }

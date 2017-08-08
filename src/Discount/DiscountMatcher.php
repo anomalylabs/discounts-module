@@ -38,15 +38,15 @@ class DiscountMatcher
      */
     public function matches($target)
     {
-        $filters = $this->discount->getConditions();
+        $filters = $this->discount->getFilters();
 
-        if (!$filters->match($target)) {
+        if ($filters->isNotEmpty() && !$filters->match($target)) {
             return false;
         }
 
         $conditions = $this->discount->getConditions();
 
-        if (!$conditions->match($target)) {
+        if ($conditions->isNotEmpty() && !$conditions->match($target)) {
             return false;
         }
 

@@ -21,4 +21,5 @@ interface DiscountRepositoryInterface extends EntryRepositoryInterface
      * @return DiscountCollection
      */
     public function enabled();
+
 }

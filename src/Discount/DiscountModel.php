@@ -50,26 +50,6 @@ class DiscountModel extends DiscountsDiscountsEntryModel implements DiscountInte
     }
 
     /**
-     * Get the scope.
-     *
-     * @return string
-     */
-    public function getScope()
-    {
-        return $this->scope;
-    }
-
-    /**
-     * Get the amount.
-     *
-     * @return string
-     */
-    public function getAmount()
-    {
-        return $this->amount;
-    }
-
-    /**
      * Get the code.
      *
      * @return string

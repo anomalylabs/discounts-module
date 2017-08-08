@@ -1,6 +1,9 @@
 {
     "name": "anomaly/discounts-module",
     "type": "streams-addon",
+    "require": {
+        "anomaly/carts-module": "~1.0.0"
+    },
     "autoload": {
         "psr-4": {
             "Anomaly\\DiscountsModule\\": "src/"

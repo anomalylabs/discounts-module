@@ -24,20 +24,6 @@ interface DiscountInterface extends EntryInterface
     public function getSlug();
 
     /**
-     * Get the scope.
-     *
-     * @return string
-     */
-    public function getScope();
-
-    /**
-     * Get the amount.
-     *
-     * @return string
-     */
-    public function getAmount();
-
-    /**
      * Get the code.
      *
      * @return string

@@ -1,9 +1,40 @@
 {
     "name": "anomaly/discounts-module",
-    "type": "streams-addon",
+    "description": "Manage discounts, coupons, and sales for your store.",
+    "keywords": [
+        "ecom",
+        "discounts",
+        "ecommerce",
+        "pyrocms"
+    ],
+    "homepage": "http://pyrocms.com/addons/anomaly/discounts-module",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "PyroCMS, Inc.",
+            "homepage": "http://pyrocms.com/",
+            "role": "Owner"
+        },
+        {
+            "name": "Ryan Thompson",
+            "homepage": "http://ryanthepyro.com/",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "docs": "https://pyrocms.com/documentation/discounts-module",
+        "forum": "https://pyrocms.com/forum/channels/discounts-module",
+        "videos": "https://pyrocms.com/videos/categories/discounts-module",
+        "slack": "https://pyrocms.com/slack",
+        "issues": "https://github.com/pyrocms/pyrocms/issues?q=is:issue is:open [discounts-module]",
+        "source": "https://github.com/anomalylabs/discounts-module"
+    },
+    "require": {
+        "anomaly/streams-platform": "^1.6"
+    },
     "autoload": {
         "psr-4": {
-            "Anomaly\\DiscountsModule\\": "src/"
+            "Anomaly\\CartsModule\\": "src/"
         }
     }
 }
